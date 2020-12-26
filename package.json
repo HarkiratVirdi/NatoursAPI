@@ -4,8 +4,9 @@
   "description": "Learning express, mongoDB and Node.js",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "start:prod": "process.env.NODE_ENV=production nodemon server.js"
+    "start": "SET process.env.NODE_ENV=development & nodemon server.js",
+    "start:prod": "SET process.env.NODE_ENV=production & nodemon server.js",
+    "debug": "ndb server.js"
   },
   "author": "Harkirat Singh Virdi",
   "license": "ISC",
@@ -16,6 +17,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.11.8",
     "morgan": "^1.10.0",
-    "slugify": "^1.4.6"
+    "ndb": "^1.1.5",
+    "slugify": "^1.4.6",
+    "validator": "^13.5.2"
   }
 }

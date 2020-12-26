@@ -1,5 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
+const ErrorController = require('./controllers/ErrorController');
+const { handleAllOtherRoutes } = require('./controllers/tourController');
 
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -25,5 +27,8 @@ app.use((req, res, next) => {
 
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
+app.all('*', handleAllOtherRoutes);
+
+app.use(ErrorController);
 
 module.exports = app;
