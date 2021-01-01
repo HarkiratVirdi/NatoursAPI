@@ -104,17 +104,17 @@ tourSchema.pre(/^find/, function (next) {
 
 tourSchema.post(/^find/, function (docs, next) {
   console.log(`Query took ${Date.now() - this.start} milliseconds`);
-  console.log(docs);
+  // console.log(docs);
   next();
 });
 
 tourSchema.pre('save', function (next) {
-  console.log('Will save it....');
+  // console.log('Will save it....');
   next();
 });
 
 tourSchema.post('save', function (doc, next) {
-  console.log(doc);
+  // console.log(doc);
   next();
 });
 
